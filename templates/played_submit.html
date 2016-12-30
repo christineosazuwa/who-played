@@ -1,0 +1,60 @@
+ <html>
+    <head>
+        <title>Did They Play? | A Python App by Christine Osazuwa</title>
+        <link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
+    </head>
+    <body>
+        <div id="container">
+            <div class="title">
+                <h1>Did They Play?</h1>
+            </div>
+            <div id="content">
+				<strong>Festival 1:</strong> {{fest1name}}<br><br>
+				
+				{% if fest2 is defined %}
+				<strong>Festival 2:</strong> {{fest2name}}<br><br>
+				{% endif %}
+				
+				{% if year is defined %}
+                <strong>Year:</strong> {{year}}<br><br>
+				{% endif %}
+				
+				{% if festbands1 is defined %}
+				<strong>Bands That Played {{fest1name}} from 2014-2016:</strong><br>
+				{{festbands1}}<br><br>
+				{% endif %}
+				
+				{% if festbands2 is defined %}
+				<strong>Bands That Played {{fest2name}} from 2014-2016:</strong><br>
+				{{festbands2}}<br><br>
+				{% endif %}
+				
+				{% if festyear is defined %}
+				<strong>Bands That Played {{fest1name}} in {{year}}:</strong><br>
+				{{festyear}}<br><br>
+				{% endif %}				
+				
+				{% if overlap is defined %}
+				<strong>{{length}} Bands Played Both {{fest1name}} & {{fest2name}} from 2014-2016:</strong><br>
+				{{overlap}}<br><br>
+				{% endif %}
+				
+				{% if overlapyear is defined %}
+				<strong>{{lengthyear}} Bands Played Both {{fest1name}} & {{fest2name}} in {{year}}:</strong><br>
+				{{overlapyear}}<br>
+				{% endif %}<br><br>
+				
+				<h3><a href="https://who-played.herokuapp.com">Search Again?</a></h3>
+            
+		  <!-- Copyright Text --> 
+		  <br>	
+		  <hr>
+		  <div class="copyright">Copyright &copy; <script>document.write(new Date().getFullYear())</script> <a href="http://christineosazuwa.com">Christine Osazuwa</a><br>
+		  Written in Python 2.7, Powered by <a href="http://heroku.com">Heroku</a> & Flask | <a href="#">View on GitHub</a><br>
+		  	<strong>Other Music Apps:</strong> <a href="https://will-they-play.herokuapp.com/">Would They Play?</a> | <a href="https://spotify-festival-playlists.herokuapp.com/">Spotify Festival Playlist</a>
+		  </div>        
+          <!-- End Copyright Text -->  
+		  </div>
+        </div>
+    </body>
+</html>

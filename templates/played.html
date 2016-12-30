@@ -1,0 +1,135 @@
+<html>
+    <head>
+        <title>Did They Play? | A Python App by Christine Osazuwa</title>
+        <link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
+    </head>
+    <body>
+        <div id="container">
+            <div class="title">
+                <h1>Did They Play?</h1>
+            </div>
+            <div id="content">
+
+				
+				<form class="form-horizontal" method="post" action="{{ url_for('hello') }}">
+					<fieldset>
+
+					<!-- Form Name -->
+					<legend></legend>
+					
+					<p>Use the fields below to see the bands that played the USA's biggest festivals over the last 3 years. Also, discover the bands that overlap for each festival, each year.</p>
+
+					<!-- Select Basic -->
+					<div class="form-group">
+					  <label class="col-md-4 control-label" for="fest1">Select Festival</label>
+					  <div class="col-md-4">
+						<select id="fest1" name="fest1" class="form-control">
+						  <option value="warped">Vans Warped Tour</option>
+						  <option value="bealestreet">The Beale Street Music Festival</option>
+						  <option value="coachella">Coachella Valley Music and Arts Festival</option>
+						  <option value="electricdaisycarnival">Electric Daisy Carnival Las Vegas</option>
+						  <option value="madeinamerica">Budweiser Made in America Festival</option>
+						  <option value="ultra">Ultra Music Festival Miami</option>
+						  <option value="hangoutfest">Hangout Music Festival</option>
+						  <option value="riotfest">Riot Fest Chicago</option>
+						  <option value="firefly">Firefly Music Festival</option>
+						  <option value="bonnaroo">Bonnaroo Music and Arts Festival</option>
+						  <option value="lollapalooza">Lollapalooza Chicago</option>
+						  <option value="pitchfork">Pitchfork Music Festival</option>
+						  <option value="austincitylimits">Austin City Limits</option>
+						  <option value="sasquatch">Sasquatch! Music Festival</option>
+						  <option value="newportfolk">Newport Folk Festival</option>
+						  <option value="governorsball">Governors Ball Music Festival</option>
+						  <option value="voodoo">VooDoo Music and Arts Festival</option>
+						  <option value="outsidelands">Outside Lands Music and Arts Festival</option>
+						</select>
+					  </div>
+					</div>
+
+					<div class="form-group">
+					  <label class="col-md-4 control-label" for="fest2">Select Second Festival</label>
+					  <div class="col-md-4">
+						<select id="fest2" name="fest2" class="form-control">
+						  <option value="">None</option>
+						  <option value="warped">Vans Warped Tour</option>
+						  <option value="bealestreet">The Beale Street Music Festival</option>
+						  <option value="coachella">Coachella Valley Music and Arts Festival</option>
+						  <option value="electricdaisycarnival">Electric Daisy Carnival Las Vegas</option>
+						  <option value="madeinamerica">Budweiser Made in America Festival</option>
+						  <option value="ultra">Ultra Music Festival Miami</option>
+						  <option value="hangoutfest">Hangout Music Festival</option>
+						  <option value="riotfest">Riot Fest Chicago</option>
+						  <option value="firefly">Firefly Music Festival</option>
+						  <option value="bonnaroo">Bonnaroo Music and Arts Festival</option>
+						  <option value="lollapalooza">Lollapalooza Chicago</option>
+						  <option value="pitchfork">Pitchfork Music Festival</option>
+						  <option value="austincitylimits">Austin City Limits</option>
+						  <option value="sasquatch">Sasquatch! Music Festival</option>
+						  <option value="newportfolk">Newport Folk Festival</option>
+						  <option value="governorsball">Governors Ball Music Festival</option>
+						  <option value="voodoo">VooDoo Music and Arts Festival</option>
+						  <option value="outsidelands">Outside Lands Music and Arts Festival</option>
+						</select>
+					  </div>
+					</div>
+
+					<!-- Select Basic -->
+					<div class="form-group">
+					  <label class="col-md-4 control-label" for="year">Select Year</label>
+					  <div class="col-md-4">
+						<select id="year" name="year" class="form-control">
+						  <option value="2014">2014</option>
+						  <option value="2015">2015</option>
+						  <option value="2016">2016</option>
+						</select>
+					  </div>
+					</div>
+
+					<!-- Multiple Radios (inline) -->
+					<div class="form-group">
+					  <label class="col-md-4 control-label" for="infotype">What Do You Want To Know?</label>
+					  <div class="col-md-4"> 
+						<label class="radio-inline" for="radios-0">
+						  <input type="radio" name="infotype" id="infotype" value="who_played" checked="checked">
+						  Who Played from 2014-2016?
+						</label> 
+						<label class="radio-inline" for="radios-1">
+						  <input type="radio" name="infotype" id="infotype" value="who_played_year">
+						  Who Played In a Certain Year?
+						</label>
+						<label class="radio-inline" for="radios-1">
+						  <input type="radio" name="infotype" id="infotype" value="overlap_bands">
+						  Overlap In Bands Playing 2 Festivals from 2014-2016?
+						</label>
+						<label class="radio-inline" for="radios-1">
+						  <input type="radio" name="infotype" id="infotype" value="overlap_bands_year">
+						  Overlap In Bands Playing In a Certain Year?
+						</label>
+					  </div>
+					</div>
+					
+					<!-- Button -->
+					<div class="form-group">
+					  <div class="col-md-4">
+						<button id="singlebutton" name="singlebutton" class="btn btn-primary" type="submit">Submit</button>
+					  </div>
+					</div>
+
+					</fieldset>
+					
+		  <!-- Copyright Text --> 
+		  <br>		  
+		  <div class="copyright">Copyright &copy; <script>document.write(new Date().getFullYear())</script> <a href="http://christineosazuwa.com">Christine Osazuwa</a><br>
+		  Written in Python 2.7, Powered by <a href="http://heroku.com">Heroku</a> & Flask | <a href="#">View on GitHub</a><br>
+		  	<strong>Other Music Apps:</strong> <a href="https://will-they-play.herokuapp.com/">Would They Play?</a> | <a href="https://spotify-festival-playlists.herokuapp.com/">Spotify Festival Playlist</a>
+		  </div>        
+          <!-- End Copyright Text -->   
+					
+					</form>
+			
+
+            </div>
+        </div>
+    </body>
+</html>
+ 
